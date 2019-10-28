@@ -101,3 +101,20 @@ contactPs[2].textContent = siteContent.contact["email"];
 //footer
 const footerP = document.querySelector('footer p');
 footerP.textContent = siteContent.footer["copyright"];
+
+// Task 3: Add new content
+for (let i = 0; i < nav.length; i++) {
+  nav[i].style.color = "green";
+}
+
+const preLink = document.createElement("a");
+preLink.textContent = "Pre-Item";
+preLink.href = "#";// there has got to be a btter way to do this?
+
+const postLink = document.createElement("a");
+postLink.textContent = "Post-Item";
+postLink.href = "#";
+
+const navApend = document.querySelector('nav');
+navApend.appendChild(postLink);
+navApend.prepend(preLink)
