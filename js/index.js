@@ -118,3 +118,12 @@ postLink.href = "#";
 const navApend = document.querySelector('nav');
 navApend.appendChild(postLink);
 navApend.prepend(preLink)
+
+// Stretch Goals
+let buttonVar = document.createElement('button');
+buttonVar.textContent = "Click Me";
+navApend.prepend(buttonVar);
+let pageBody = document.querySelector('body');
+buttonVar.addEventListener('click', () => {
+  pageBody.style.backgroundColor = 'pink';
+})
