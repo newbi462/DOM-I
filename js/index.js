@@ -47,13 +47,20 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 //Task 2: Update the HTML with the JSON data
 //NAV
 const nav = document.querySelectorAll('nav a');
-console.log(nav[0].textContent);
+//console.log(nav[0].textContent);
+/*
 nav[0].textContent = siteContent.nav["nav-item-1"];
 nav[1].textContent = siteContent.nav["nav-item-2"];
 nav[2].textContent = siteContent.nav["nav-item-3"];
 nav[3].textContent = siteContent.nav["nav-item-4"];
 nav[4].textContent = siteContent.nav["nav-item-5"];
 nav[5].textContent = siteContent.nav["nav-item-6"];
+*/
+const navobject = Object.values(siteContent.nav);
+for (let i = 0; i < nav.length; i++) { // must loop over nav not array due to length
+  nav[i].textContent = navobject[i];
+};
+// could probaly clean this up with a key == include(nav-item) test 
 
 let logoImg = document.getElementById("logo-img");
 logoImg.src = siteContent.nav["img-src"];
@@ -126,4 +133,5 @@ navApend.prepend(buttonVar);
 let pageBody = document.querySelector('body');
 buttonVar.addEventListener('click', () => {
   pageBody.style.backgroundColor = 'pink';
+  buttonVar.style.display = 'none';
 })
